@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>519</width>
-    <height>590</height>
+    <height>646</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
       <x>10</x>
       <y>0</y>
       <width>502</width>
-      <height>542</height>
+      <height>608</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
@@ -51,6 +51,9 @@
        </property>
       </widget>
      </item>
+     <item row="12" column="1" colspan="2">
+      <widget class="QLineEdit" name="txtNombreT"/>
+     </item>
      <item row="8" column="2">
       <widget class="QPushButton" name="btEstadoAceptacion">
        <property name="text">
@@ -60,9 +63,6 @@
      </item>
      <item row="2" column="1">
       <widget class="QLineEdit" name="nombreVariable"/>
-     </item>
-     <item row="17" column="2">
-      <widget class="QLineEdit" name="valorVresultado"/>
      </item>
      <item row="15" column="1" colspan="2">
       <widget class="QLabel" name="label_4">
@@ -77,7 +77,7 @@
      <item row="1" column="2">
       <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>Valor Inicial</string>
+        <string>Rango</string>
        </property>
       </widget>
      </item>
@@ -95,15 +95,8 @@
        </property>
       </widget>
      </item>
-     <item row="16" column="1">
-      <widget class="QLabel" name="label_3">
-       <property name="text">
-        <string>Nombre Variable</string>
-       </property>
-      </widget>
-     </item>
-     <item row="12" column="1" colspan="2">
-      <widget class="QLineEdit" name="txtNombreT"/>
+     <item row="8" column="1">
+      <widget class="QLineEdit" name="txtAceptacion"/>
      </item>
      <item row="7" column="1" colspan="3">
       <widget class="QLabel" name="lbEAceptacion">
@@ -115,18 +108,15 @@
        </property>
       </widget>
      </item>
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="txtInicial"/>
+     </item>
      <item row="10" column="1" colspan="3">
       <widget class="QLabel" name="lbTransicion">
        <property name="text">
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; color:#ff0000;&quot;&gt;TRANSICIONES&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-     </item>
-     <item row="8" column="1">
-      <widget class="QLineEdit" name="txtAceptacion"/>
-     </item>
-     <item row="5" column="1">
-      <widget class="QLineEdit" name="txtInicial"/>
      </item>
      <item row="11" column="1" colspan="2">
       <widget class="QLabel" name="lbOrigen">
@@ -142,22 +132,12 @@
        </property>
       </widget>
      </item>
-     <item row="16" column="2">
-      <widget class="QLabel" name="label_5">
-       <property name="text">
-        <string>Valor Variable</string>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="1">
       <widget class="QLabel" name="label">
        <property name="text">
         <string>Nombre Variable</string>
        </property>
       </widget>
-     </item>
-     <item row="2" column="2">
-      <widget class="QLineEdit" name="valorIni"/>
      </item>
      <item row="3" column="1" colspan="2">
       <widget class="QPushButton" name="btAgregEstados">
@@ -166,15 +146,35 @@
        </property>
       </widget>
      </item>
-     <item row="17" column="1">
-      <widget class="QLineEdit" name="nombreVresultado"/>
-     </item>
      <item row="19" column="1" colspan="2">
       <widget class="QLabel" name="label_6">
        <property name="text">
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; color:#ff0000;&quot;&gt;FINALIZACIÓN&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
+     </item>
+     <item row="16" column="2">
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Valor Variable</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QLineEdit" name="rango"/>
+     </item>
+     <item row="17" column="2">
+      <widget class="QLineEdit" name="valorVresultado"/>
+     </item>
+     <item row="16" column="1">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Nombre Variable</string>
+       </property>
+      </widget>
+     </item>
+     <item row="17" column="1">
+      <widget class="QLineEdit" name="nombreVresultado"/>
      </item>
     </layout>
    </widget>
