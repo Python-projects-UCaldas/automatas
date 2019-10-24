@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>519</width>
-    <height>646</height>
+    <width>922</width>
+    <height>658</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,12 +24,32 @@
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
+     <item row="15" column="1" colspan="2">
+      <widget class="QPushButton" name="btAgregarTransicion">
+       <property name="text">
+        <string>Agregar Transición</string>
+       </property>
+      </widget>
+     </item>
      <item row="5" column="2">
       <widget class="QPushButton" name="btEstadoInicial">
        <property name="text">
         <string>Agregar Estado Inicial</string>
        </property>
       </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QLineEdit" name="rango"/>
+     </item>
+     <item row="17" column="1" colspan="2">
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; color:#ff0000;&quot;&gt;FINALIZACIÓN&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="2">
+      <widget class="QLineEdit" name="txtCondicion"/>
      </item>
      <item row="14" column="1">
       <widget class="QLabel" name="lbCondicion">
@@ -41,18 +61,11 @@
        </property>
       </widget>
      </item>
-     <item row="14" column="2">
-      <widget class="QLineEdit" name="txtCondicion"/>
-     </item>
-     <item row="20" column="1" colspan="2">
-      <widget class="QPushButton" name="btAgregarTransicion">
-       <property name="text">
-        <string>Agregar Transición</string>
-       </property>
-      </widget>
-     </item>
      <item row="12" column="1" colspan="2">
       <widget class="QLineEdit" name="txtNombreT"/>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="nombreVariable"/>
      </item>
      <item row="8" column="2">
       <widget class="QPushButton" name="btEstadoAceptacion">
@@ -61,18 +74,8 @@
        </property>
       </widget>
      </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="nombreVariable"/>
-     </item>
-     <item row="15" column="1" colspan="2">
-      <widget class="QLabel" name="label_4">
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline; color:#ff0000;&quot;&gt;Estado al que lleva:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-       </property>
-      </widget>
+     <item row="8" column="1">
+      <widget class="QLineEdit" name="txtAceptacion"/>
      </item>
      <item row="1" column="2">
       <widget class="QLabel" name="label_2">
@@ -81,7 +84,10 @@
        </property>
       </widget>
      </item>
-     <item row="21" column="1" colspan="2">
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="txtInicial"/>
+     </item>
+     <item row="19" column="1" colspan="2">
       <widget class="QPushButton" name="btFin">
        <property name="text">
         <string>Finalizar Ingreso de datos </string>
@@ -95,9 +101,6 @@
        </property>
       </widget>
      </item>
-     <item row="8" column="1">
-      <widget class="QLineEdit" name="txtAceptacion"/>
-     </item>
      <item row="7" column="1" colspan="3">
       <widget class="QLabel" name="lbEAceptacion">
        <property name="text">
@@ -107,9 +110,6 @@
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
-     </item>
-     <item row="5" column="1">
-      <widget class="QLineEdit" name="txtInicial"/>
      </item>
      <item row="10" column="1" colspan="3">
       <widget class="QLabel" name="lbTransicion">
@@ -146,35 +146,41 @@
        </property>
       </widget>
      </item>
-     <item row="19" column="1" colspan="2">
-      <widget class="QLabel" name="label_6">
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>70</y>
+      <width>391</width>
+      <height>541</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="label_7">
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; color:#ff0000;&quot;&gt;FINALIZACIÓN&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>CAMINO MÁS CORTO</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
-     <item row="16" column="2">
-      <widget class="QLabel" name="label_5">
-       <property name="text">
-        <string>Valor Variable</string>
+     <item>
+      <widget class="QTextBrowser" name="caminoSolucion">
+       <property name="placeholderText">
+        <string>Lista con la solución más óptima</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="2">
-      <widget class="QLineEdit" name="rango"/>
-     </item>
-     <item row="17" column="2">
-      <widget class="QLineEdit" name="valorVresultado"/>
-     </item>
-     <item row="16" column="1">
-      <widget class="QLabel" name="label_3">
+     <item>
+      <widget class="QPushButton" name="solucion">
        <property name="text">
-        <string>Nombre Variable</string>
+        <string>Mostrar camino más corto</string>
        </property>
       </widget>
-     </item>
-     <item row="17" column="1">
-      <widget class="QLineEdit" name="nombreVresultado"/>
      </item>
     </layout>
    </widget>
@@ -184,7 +190,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>519</width>
+     <width>922</width>
      <height>22</height>
     </rect>
    </property>
