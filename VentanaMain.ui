@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>922</width>
-    <height>658</height>
+    <width>1196</width>
+    <height>659</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,88 +19,11 @@
      <rect>
       <x>10</x>
       <y>0</y>
-      <width>502</width>
+      <width>781</width>
       <height>608</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="15" column="1" colspan="2">
-      <widget class="QPushButton" name="btAgregarTransicion">
-       <property name="text">
-        <string>Agregar Transición</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="2">
-      <widget class="QPushButton" name="btEstadoInicial">
-       <property name="text">
-        <string>Agregar Estado Inicial</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="2">
-      <widget class="QLineEdit" name="rango"/>
-     </item>
-     <item row="17" column="1" colspan="2">
-      <widget class="QLabel" name="label_6">
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; color:#ff0000;&quot;&gt;FINALIZACIÓN&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-     </item>
-     <item row="14" column="2">
-      <widget class="QLineEdit" name="txtCondicion"/>
-     </item>
-     <item row="14" column="1">
-      <widget class="QLabel" name="lbCondicion">
-       <property name="text">
-        <string>Condicion</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="12" column="1" colspan="2">
-      <widget class="QLineEdit" name="txtNombreT"/>
-     </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="nombreVariable"/>
-     </item>
-     <item row="8" column="2">
-      <widget class="QPushButton" name="btEstadoAceptacion">
-       <property name="text">
-        <string>Agregar Estados de aceptacion</string>
-       </property>
-      </widget>
-     </item>
-     <item row="8" column="1">
-      <widget class="QLineEdit" name="txtAceptacion"/>
-     </item>
-     <item row="1" column="2">
-      <widget class="QLabel" name="label_2">
-       <property name="text">
-        <string>Rango</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="1">
-      <widget class="QLineEdit" name="txtInicial"/>
-     </item>
-     <item row="19" column="1" colspan="2">
-      <widget class="QPushButton" name="btFin">
-       <property name="text">
-        <string>Finalizar Ingreso de datos </string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="1">
-      <widget class="QLabel" name="lbEInicial">
-       <property name="text">
-        <string>Estado Inicial</string>
-       </property>
-      </widget>
-     </item>
      <item row="7" column="1" colspan="3">
       <widget class="QLabel" name="lbEAceptacion">
        <property name="text">
@@ -111,19 +34,25 @@
        </property>
       </widget>
      </item>
-     <item row="10" column="1" colspan="3">
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="nombreVariable"/>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLabel" name="lbEInicial">
+       <property name="text">
+        <string>Estado Inicial</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="1" colspan="3">
       <widget class="QLabel" name="lbTransicion">
        <property name="text">
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; color:#ff0000;&quot;&gt;TRANSICIONES&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
-     <item row="11" column="1" colspan="2">
-      <widget class="QLabel" name="lbOrigen">
-       <property name="text">
-        <string>                                                       Nombre de la transición </string>
-       </property>
-      </widget>
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="txtInicial"/>
      </item>
      <item row="0" column="1" colspan="3">
       <widget class="QLabel" name="lbEstados">
@@ -146,15 +75,114 @@
        </property>
       </widget>
      </item>
+     <item row="16" column="1" colspan="2">
+      <widget class="QPushButton" name="btAgregarTransicion">
+       <property name="text">
+        <string>Agregar Transición</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="2">
+      <widget class="QPushButton" name="btEstadoInicial">
+       <property name="text">
+        <string>Agregar Estado Inicial</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QLineEdit" name="rango"/>
+     </item>
+     <item row="18" column="1" colspan="2">
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; color:#ff0000;&quot;&gt;FINALIZACIÓN&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="15" column="2">
+      <widget class="QLineEdit" name="txtCondicion"/>
+     </item>
+     <item row="13" column="1" colspan="2">
+      <widget class="QLineEdit" name="txtNombreT"/>
+     </item>
+     <item row="15" column="1">
+      <widget class="QLabel" name="lbCondicion">
+       <property name="text">
+        <string>Condicion</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="QLineEdit" name="txtAceptacion"/>
+     </item>
+     <item row="9" column="2">
+      <widget class="QPushButton" name="btEstadoAceptacion">
+       <property name="text">
+        <string>Agregar Estados de aceptacion</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Rango</string>
+       </property>
+      </widget>
+     </item>
+     <item row="20" column="1" colspan="2">
+      <widget class="QPushButton" name="btFin">
+       <property name="text">
+        <string>Finalizar Ingreso de datos </string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2">
+      <widget class="QLabel" name="estadoInicial">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Estados de aceptación</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="2">
+      <widget class="QLabel" name="eAceptacion">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="1">
+      <widget class="QLabel" name="lbOrigen">
+       <property name="text">
+        <string>Transición</string>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="2">
+      <widget class="QLabel" name="transicion">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>70</y>
+      <x>790</x>
+      <y>10</y>
       <width>391</width>
-      <height>541</height>
+      <height>591</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -175,13 +203,6 @@
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QPushButton" name="solucion">
-       <property name="text">
-        <string>Mostrar camino más corto</string>
-       </property>
-      </widget>
-     </item>
     </layout>
    </widget>
   </widget>
@@ -190,7 +211,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>922</width>
+     <width>1196</width>
      <height>22</height>
     </rect>
    </property>

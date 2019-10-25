@@ -28,16 +28,14 @@ class Ventana(QMainWindow):
 
 
 	def initUI(self):
-		self.btAgregarTransicion.clicked.connect(
-			lambda: self.generarTransicion(self.txtNombreT.text(), self.nombreVresultado.text(), 
-				self.valorVresultado.text(), self.txtCondicion.text()))
 		self.btFin.clicked.connect(lambda:self.dibujar())
 		self.btAgregEstados.clicked.connect(lambda: self.agregarEstado())
-		self.solucion.clicked.connect(lambda: self.dibujarSolucion())
-
-	def generarTransicion(self, nombre, origen, destino, condicion):
-		nueva = Transicion(nombre, origen, destino, condicion)
-		lista.append(nueva)
+		self.btEstadoInicial.clicked.connect(lambda: self.estadoInicial.setText('Usted ha ingresado el' +
+			' estado inicial: ' + self.txtInicial.text()))
+		self.btEstadoAceptacion.clicked.connect(lambda: self.eAceptacion.setText('Usted ha ingresado el' +
+			' estado de aceptación: ' + self.txtAceptacion.text()))
+		self.btAgregarTransicion.clicked.connect(lambda: self.transicion.setText('Usted ha ingresado el' +
+			' la transición: ' + self.txtNombreT.text() + ' con la condición: ' + self.txtCondicion.text()))
 
 	def agregarEstado(self):
 		listaDiccionario = []
@@ -52,9 +50,22 @@ class Ventana(QMainWindow):
 		Grafo = nx.DiGraph()
 		for i in listaEstados:
 			Grafo.add_node(i)
-		nx.draw_shell(Grafo, with_labels=True, node_color='pink', font_size= 5, node_size=500)
+		if (len(listaEstados[0]) == 4):
+			lista = grafOveja()
+			for i in lista:
+				Grafo.add_edge(i.getOrigen(), i.getDestino())
+		elif (len(listaEstados[0]) == 3):
+			lista = grafoCanival()
+			for i in lista:
+				Grafo.add_edge(i.getOrigen(), i.getDestino())
+		#elif (len(listaEstados[0]) == 6):
+			#lista = grafoFamilia()	
+			# for i in lista:
+			# 	Grafo.add_edge(i.getOrigen(), i.getDestino())
+		nx.draw_shell(Grafo, with_labels=True, node_color='red', font_size= 5, node_size=500)
 		plt.savefig('graph.png',dpi=(140))#transparent=True, facecolor="w"
 		plt.clf()
+
 
 	# def generarArchivo(self, dictEstados):
 	# 	file = open("condicionales.py", "a")
@@ -88,13 +99,12 @@ class Ventana(QMainWindow):
 			Grafo.add_node(i)
 		for i in lista:
 			Grafo.add_edge(i.getOrigen(), i.getDestino())
-			camino.append('Desde el vertice: ' + str(i.getOrigen()) + 'Hasta el vertice: ' + str(i.getDestino()) +
-				'con la transición: ' + i.getNombre() + '         ')
+			camino.append('Desde el vertice: ' + str(i.getOrigen()) + ' Hasta el vertice: ' + str(i.getDestino()) +
+				' con la transición: ' + i.getNombre() + '         ')
 			time.sleep(1)
-			nx.draw_networkx_edge_labels(Grafo,{i.getOrigen(): ([0, 0.6]), i.getDestino(): ([0, 0.6])}, edge_labels={(i.getOrigen(),i.getDestino()):i.getNombre()},font_color='red')
-# 				nx.draw_networkx_edge_labels(G,pos,edge_labels={('A','B'):'AB',\
-# ('B','C'):'BC',('B','D'):'BD'},font_color='red')
-			nx.draw_circular(Grafo, with_labels=True, node_color='yellow', font_size= 5, node_size=500)
+			nx.draw_networkx_edge_labels(Grafo,{i.getOrigen(): ([0, 0.6]), i.getDestino(): ([0, 0.6])}, 
+				edge_labels={(i.getOrigen(),i.getDestino()):i.getNombre()},font_color='red')
+			nx.draw_circular(Grafo, with_labels=True, node_color='red', font_size= 5, node_size=500)
 			plt.savefig('graph.png',dpi=(140))#transparent=True, facecolor="w"
 			plt.clf()
 			pygame.init()
@@ -125,8 +135,14 @@ class Ventana(QMainWindow):
 		            if event.key == K_k:
 		            	lista = canibal()
 		            	self.dibujarAristas(lista)
-		            elif event.key == K_d:
-		                pass
+		            elif event.key == K_f:
+		                lista = familia()
+		                self.dibujarAristas(lista)
+		            elif event.key == K_o:
+		            	lista = oveja()
+		            	self.dibujarAristas(lista)
+		            elif event.key == K_r:
+		            	pass
 		    pygame.display.update()
 #Iniciar Aplicacion
 app=QApplication(sys.argv)
