@@ -115,8 +115,14 @@ class Ventana(QMainWindow):
 			pygame.display.update()
 			plt.clf()
 		
-		self.caminoSolucion.setText(str(camino))
+		self.mostraCamino(camino)
 		
+	def mostraCamino(self,lista):
+		n = 1
+		for i in lista:
+			self.caminoSolucion.append(str(n) + ' -> ' + str(i))
+			n += 1
+
 	def dibujar(self):
 		pygame.init()
 		window = pygame.display.set_mode((896,672))
