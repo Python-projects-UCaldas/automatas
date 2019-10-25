@@ -216,17 +216,9 @@ def canibal():
 	tran10 = Transicion('Devolver un canibal', (1,0,1), (0,0,2))
 	tran11 = Transicion('Pasar dos canibales', (0,0,2), (1,0,0))
 
-	solucionCanibal.append(tran1)
-	solucionCanibal.append(tran2)
-	solucionCanibal.append(tran3)
-	solucionCanibal.append(tran4)
-	solucionCanibal.append(tran5)
-	solucionCanibal.append(tran6)
-	solucionCanibal.append(tran7)
-	solucionCanibal.append(tran8)
-	solucionCanibal.append(tran9)
-	solucionCanibal.append(tran10)
-	solucionCanibal.append(tran11)
+	for i in range(1, 12):
+		variable = 'tran' + str(i)
+		solucionCanibal.append(vars()[variable])
 
 	return solucionCanibal
 
@@ -242,13 +234,9 @@ def familia():
 	tran6=Transicion('Devolver flaco. Tiempo=26',(1,1,0,1,1,1),(0,0,0,1,1,1))
 	tran7=Transicion('Llevar flaco y gordo. Tiempo=29 ',(0,0,0,1,1,1),(1,1,1,1,1,1))
 
-	solucionFamilia.append(tran1)
-	solucionFamilia.append(tran2)
-	solucionFamilia.append(tran3)
-	solucionFamilia.append(tran4)
-	solucionFamilia.append(tran5)
-	solucionFamilia.append(tran6)
-	solucionFamilia.append(tran7)
+	for i in range(1, 8):
+		variable = 'tran' + str(i)
+		solucionFamilia.append(vars()[variable])
 
 	return solucionFamilia
 
@@ -262,14 +250,10 @@ def oveja():
 	tran5=Transicion('Llevar alimento',(0,0,0,1),(1,1,0,1))
 	tran6=Transicion('Devolver bote',(1,1,0,1),(0,1,0,1))
 	tran7=Transicion('Llevar oveja',(0,1,0,1),(1,1,1,1))
-
-	solucionOveja.append(tran1)
-	solucionOveja.append(tran2)
-	solucionOveja.append(tran3)
-	solucionOveja.append(tran4)
-	solucionOveja.append(tran5)
-	solucionOveja.append(tran6)
-	solucionOveja.append(tran7)
+	
+	for i in range(1, 8):
+		variable = 'tran' + str(i)
+		solucionOveja.append(vars()[variable])
 
 	return solucionOveja
 
