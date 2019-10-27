@@ -58,10 +58,10 @@ class Ventana(QMainWindow):
 			lista = grafoCanival()
 			for i in lista:
 				Grafo.add_edge(i.getOrigen(), i.getDestino())
-		#elif (len(listaEstados[0]) == 6):
-			#lista = grafoFamilia()	
-			# for i in lista:
-			# 	Grafo.add_edge(i.getOrigen(), i.getDestino())
+		elif (len(listaEstados[0]) == 6):
+			lista = grafoFamilia()	
+			for i in lista:
+				Grafo.add_edge(i.getOrigen(), i.getDestino())
 		nx.draw_shell(Grafo, with_labels=True, node_color='red', font_size= 5, node_size=500)
 		plt.savefig('graph.png',dpi=(140))#transparent=True, facecolor="w"
 		plt.clf()
@@ -116,7 +116,32 @@ class Ventana(QMainWindow):
 			plt.clf()
 		
 		self.mostraCamino(camino)
+	
+	def dibujarAristasRana(self,lista):
+		camino = []
 		
+		Grafo = nx.DiGraph()
+
+		for i in lista:
+			Grafo.add_edge(i.getOrigen(), i.getDestino())
+			camino.append('Desde el vertice: ' + str(i.getOrigen()) + ' Hasta el vertice: ' + str(i.getDestino()) +
+				' con la transición: ' + i.getNombre())
+			time.sleep(1)
+			nx.draw_networkx_edge_labels(Grafo,{i.getOrigen(): ([0, 0.6]), i.getDestino(): ([0, 0.6])}, 
+				edge_labels={(i.getOrigen(),i.getDestino()):i.getNombre()},font_color='red')
+			nx.draw_circular(Grafo, with_labels=False, node_color='red', font_size = 5, node_size=50, edge_color='green')
+			plt.savefig('graph.png',dpi=(140))#transparent=True, facecolor="w"
+			plt.clf()
+			pygame.init()
+			window = pygame.display.set_mode((896,672))
+			pygame.display.set_caption("Grafo completo")
+			My_image = pygame.image.load("graph.png")
+			window.blit(My_image,(0,0))
+			pygame.display.update()
+			plt.clf()
+		
+		self.mostraCamino(camino)
+			
 	def mostraCamino(self,lista):
 		n = 1
 		for i in lista:
@@ -148,7 +173,8 @@ class Ventana(QMainWindow):
 		            	lista = oveja()
 		            	self.dibujarAristas(lista)
 		            elif event.key == K_r:
-		            	pass
+		            	lista = rana()
+		            	self.dibujarAristasRana(lista)
 		    pygame.display.update()
 #Iniciar Aplicacion
 app=QApplication(sys.argv)
